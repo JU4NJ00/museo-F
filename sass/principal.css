@@ -1,0 +1,149 @@
+/*color*/
+/*spacing*/
+/*font-family*/
+/*font_sizes*/
+/*Normalize*/
+*::after,
+*::before,
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1em;
+}
+
+img {
+  width: 100%;
+}
+
+html {
+  height: 100%;
+  font-family: "Merriweather", serif;
+  font-size: 1em;
+}
+
+body {
+  background-color: #E4F2E7;
+  position: relative;
+  padding-bottom: 50px;
+  min-height: 100vh;
+}
+
+.encabezado {
+  background-color: #8ec3b0;
+  color: #ffffff;
+}
+
+.titulo__texto {
+  font-family: "Kanit", sans-serif;
+}
+
+.navbar {
+  background-color: #198754;
+  color: #ffffff;
+}
+.navbar .nav-link {
+  position: relative;
+  overflow: hidden;
+  color: #ffffff !important;
+}
+.navbar .nav-link:before, .navbar .nav-link:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: #ffffff;
+  transition: left 0.8s;
+}
+.navbar .nav-link:hover:before {
+  left: 0;
+}
+.navbar .nav-link:after {
+  top: auto;
+  bottom: 0;
+  left: auto;
+  right: -100%;
+  background: #ffffff;
+  transition: right 0.8s;
+}
+.navbar .nav-link:hover:after {
+  right: 0;
+}
+
+.seccion__index {
+  width: 100%;
+  height: 100vh;
+  background-image: url("../imagenes/ferro1.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+.titulo__parrafo {
+  font-family: "Kanit", sans-serif;
+  color: #05758b;
+  font-weight: bold;
+}
+
+.foto_home {
+  width: 100%;
+  height: auto;
+  box-shadow: 5px 5px 25px black;
+}
+
+i {
+  font-size: 24px;
+}
+
+.logo {
+  width: 100px;
+  height: 100px;
+  margin-top: 10px;
+}
+
+.placa {
+  width: 100%;
+  height: 100px;
+  position: absolute;
+  top: 30%;
+  background-color: rgba(25, 135, 84, 0.5490196078);
+}
+
+.placa__texto {
+  font-family: "Kanit", sans-serif;
+  text-align: center;
+  font-size: 50px;
+  font-weight: bold;
+  color: #000;
+  margin: 20px 0 auto;
+  text-shadow: 8px 8px 15px #fff;
+}
+
+.formulario {
+  background-color: rgba(25, 135, 84, 0.5490196078);
+  margin: 150px auto;
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.pie__pagina {
+  background-color: #198754;
+  color: #ffffff;
+  padding: 10px 0 10px 0;
+  margin-top: 10px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  font-family: "Kanit", sans-serif;
+  font-size: 1em;
+  text-align: center;
+}/*# sourceMappingURL=principal.css.map */

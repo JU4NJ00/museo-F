@@ -1,0 +1,11 @@
+Tema categorias:
+    
+    Categoria primaria("categoriaboss"): Es la categoria principal, se encarga de dividir entre elementos de la misma clase
+    como libros, muebles ferroviarios, indumentaria ferroviaria, artefactos, etc.
+
+    Categoria secundaria("categoria"): Es una subcategoria de libros, se encarga de clasificarlos en tematica
+    como manuales, historia, bibliografia, etc.
+
+    consultar
+
+        *como poner el valor de los select en los formulario de editar

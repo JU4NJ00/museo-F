@@ -1,0 +1,18 @@
+.formulario{
+    background-color: rgb(212, 211, 209);
+    margin: 20px;
+    padding: 20px;
+    border-radius: 20px;
+    
+}
+body{
+    font-family: 'Play', sans-serif;
+}
+i{
+    font-size: 24px;
+}
+ 
+.logo{
+    width: 10px;
+    height: 10px;    
+}

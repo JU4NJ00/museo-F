@@ -6,6 +6,7 @@
     
 }
 body{
+    
     font-family: 'Play', sans-serif;
 }
 i{
@@ -13,6 +14,10 @@ i{
 }
  
 .logo{
+    
     width: 10px;
     height: 10px;    
+}
+*{
+    margin: 0;
 }

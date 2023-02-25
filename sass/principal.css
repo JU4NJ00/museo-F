@@ -8,7 +8,8 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  box-sizing: border-box ;
+  
 }
 
 html {
@@ -111,9 +112,10 @@ i {
 }
 
 .placa {
-  width: 100%;
-  height: 100px;
   position: absolute;
+  margin: 0;
+  left: -2px;
+  overflow: hidden;
   top: 30%;
   background-color: rgba(25, 135, 84, 0.5490196078);
 }
@@ -124,7 +126,6 @@ i {
   font-size: 50px;
   font-weight: bold;
   color: #000;
-  margin: 20px 0 auto;
   text-shadow: 8px 8px 15px #fff;
 }
 

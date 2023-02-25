@@ -17,7 +17,7 @@ include("primero.php");
    
   <section class="container-fluid seccion__index">
 
-  <div class="placa" >
+  <div class="placa container-fluid" >
 
 
         <h1 class="placa__texto">Sistema de Control de Inventario</h1>

@@ -25,8 +25,8 @@
                 </div>  
             </div>
           </div>
-          <div class="row">
-    	<div class="col-12 mt-5 ">
+          <div class="container-fluid">
+    	<div class="col-12 mt-4 ">
 
       <h3 class="display-5 bg-danger text-light text-center"> - Sitio en Contrucción - </h3>
 		

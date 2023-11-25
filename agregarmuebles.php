@@ -1,6 +1,9 @@
 <?php
 session_start();
-
+if(isset($_SESSION["dniadmin"])){
+ }else{
+  if(isset($_SESSION["dniencargado"])){
+  }else {header("location:index.php");}}
 // Conexion a la BD
 require_once "conexion.php";
 $sql="SELECT * FROM categoria";
@@ -25,13 +28,17 @@ $result=mysqli_query($conex,$sql);
   
   <div class="container mt-2 mb-5">
   <div class="text-center mt-5 mb-2"><h2>Agregar Muebles</h2></div>	
-  
+  <div class="row">
+  <div class="col-11"></div>
+  <div class="col-1 text-right">
+  <div class="btn btn-danger btn-sm"> <a class="text-decoration-none text-white" href="inventariomuebles.php">Cancelar</a></div>
+</div>
   	
   <form class="row g-3" action="insertardatosmuebles.php" method="post">
   
   <div class="col-sm-6">
     <label for="designacion" class="form-label">Designacion</label>
-    <input type="text" class="form-control" name="designacion" id="designacion" placeholder="Ingresar designacion" required>
+    <input type="text" class="form-control" name="designacion" id="designacion" placeholder="Designacion" required>
   </div>
 
 <div class="col-sm-6 mb-3">
@@ -44,7 +51,7 @@ $result=mysqli_query($conex,$sql);
   
   <div class="col-sm-6 mb-3">
     <label for="nomdonante" class="form-label"> Nombre de Donante</label>
-    <input type="text" class="form-control" name="nomdonante" id="nomdonante" placeholder="Ingresa tu telefono">
+    <input type="text" class="form-control" name="nomdonante" id="nomdonante" placeholder="Nombre del donante">
   </div>
   
    <div class="col-sm-6 mb-3">
@@ -54,12 +61,18 @@ $result=mysqli_query($conex,$sql);
 
   <div class="col-sm-6 mb-3">
     <label for="datodescr" class="form-label">Datos Descriptivos</label>
-    <input type="text" class="form-control" name="datodescr" id="datodescr" placeholder="Escribe aqui" required>
+
+
+    <textarea type="text" class="form-control" name="datodescr" id="datodescr" placeholder="Datos descriptivos" cols="10" rows="3"></textarea>
+
+    
+
+    
   </div>
 
   <div class="col-sm-6 mb-3">
   <label for="procedencia" class="form-label">Procedencia</label>
-  <input type="text" class="form-control" name="procedencia" id="procedencia" placeholder="Escribe aqui" required>
+  <input type="text" class="form-control" name="procedencia" id="procedencia" placeholder="Procedencia" required>
   </div> 
 
   <div class="col-sm-6 mb-3">
@@ -92,7 +105,7 @@ $result=mysqli_query($conex,$sql);
 
 </div>
   <div class="col-12 text-center">
-  <button type="submit" class="btn btn-primary" name="" id="">Enviar</button>
+  <button type="submit" class="btn btn-success" name="" id="">Confirmar</button>
   
   </div>
   

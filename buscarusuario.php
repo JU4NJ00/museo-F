@@ -1,5 +1,11 @@
 <?php
-
+session_start();
+if(isset($_SESSION["dniadmin"])){
+	header("location:index.php");
+}else{
+ if(isset($_SESSION["dniencargado"])){
+	header("location:index.php");
+ }else {header("location:index.php");}}
 // Conexion a la Base de Datos Biblioteca 
 
  require_once "conexion.php";

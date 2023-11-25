@@ -49,7 +49,12 @@ if (!isset($_SESSION['dniadmin'])){
     
       
     <section>
-     
+     <?php
+    if(isset($_POST['btnbuscar']) && $_POST['clavebuscada']!=''){
+            echo '<a href="listado.php"><i class="fa-sharp fa-solid fa-arrow-left fa-2x m-2"></i></a>';}?>
+    
+
+
     <div class="container text-center ">
         <div class="text-center mt-5 mb-3"><h3>Listado de usuarios</h3></div>
         

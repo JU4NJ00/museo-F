@@ -1,6 +1,12 @@
 <?php
 session_start();
 
+if(isset($_SESSION["dniadmin"])){
+
+}else{
+ if(isset($_SESSION["dniencargado"])){
+	
+ }else {header("location:index.php");}}
 // Conexion a la BD
 require_once "conexion.php";
 include("primero.php");
@@ -81,8 +87,10 @@ $fila=mysqli_fetch_array($result);
   </div>
 
   <div class="col-sm-6 mb-3">
-    <label for="modoadquisicion" class="form-label"> Modo de adquisicion</label>
-    <input type="text" class="form-control" name="modoadquisicion" id="modoadquisicion" placeholder="Ingresar modoa dquisicion" value="<?php echo $fila['modoadquisicion']; ?>">
+  <label for="modoadquisicion" class="form-label">Modo de adquisicion</label>
+    <select class="form-control" name="modoadquisicion" id="modoadquisicion" required>
+      <option <?php if ($fila['modoadquisicion']=='Donacion'){echo "selected";}?> value="Donacion">Donacion</option>
+    </select>
   </div>
 
   <div class="col-sm-6 mb-3">
@@ -95,9 +103,13 @@ $fila=mysqli_fetch_array($result);
     <input type="date" class="form-control" name="fechaingreso" id="fechaingreso" placeholder="Ingresar fecha de ingreso " value="<?php echo $fila['fechaingreso']; ?>">
   </div>
 
+  
+
   <div class="col-sm-6 mb-3">
     <label for="descripcion" class="form-label"> Descripcion</label>
-    <input type="text" class="form-control" name="descripcion" id="descripcion" placeholder="Ingresar descripcion" value="<?php echo $fila['descripcion']; ?>">
+    <textarea class="form-control" name="descripcion" id="descripcion" placeholder="Datos descriptivos" cols="10" rows="3"><?php echo $fila['descripcion']; ?></textarea>
+
+    
   </div>
 
   <div class="col-sm-6 mb-3">

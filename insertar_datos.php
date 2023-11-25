@@ -21,8 +21,8 @@ if(!empty(trim($_POST['nombre'])) && !empty(trim($_POST['apellido'])) &&
 
 	if (ValidacionDatos()){
          
-		$nombre = preg_replace('/\s+/',' ',$_POST['nombre']);
-		$apellido = preg_replace('/\s+/',' ',$_POST['apellido']);
+		$nombre = preg_replace('/[^a-zA-ZñÑ\s]+/', '', $_POST['nombre']);
+		$apellido = preg_replace('/[^a-zA-ZñÑ\s]+/', '',$_POST['apellido']);
 		$dni = $_POST['dni'];
 		$email = $_POST['email'];
 		//Campos agregados
@@ -46,21 +46,21 @@ if(!empty(trim($_POST['nombre'])) && !empty(trim($_POST['apellido'])) &&
 			//codigo 1062 duplicado
             if(mysqli_errno($conex)==1062){
 				$error.="Error, DNI duplicado";
-				header("location:index.php?mensaje=".$error);
+				header("location:agregar.php?mensaje=".$error);
 			}else{
             $error.="Error en la Inserción de datos ";
-            header("Location:index.php?mensaje=".$error);
+            header("Location:agregar.php?mensaje=".$error);
         }
      
      }
 	
 	}else{
-		header("Location:index.php?mensaje=".$error);
+		header("Location:agregar.php?mensaje=".$error);
 	}
 }else{
 
 	$error.="Faltan Datos ";
-	header("Location:index.php?mensaje=".$error);
+	header("Location:agregar.php?mensaje=".$error);
 	
 }
 

@@ -1,5 +1,11 @@
 <?php
 session_start();
+if(isset($_SESSION["dniadmin"])){
+	
+}else{
+ if(isset($_SESSION["dniencargado"])){
+	
+ }else {header("location:index.php");}}
 
 // Conexion a la BD
 require_once "conexion.php";
@@ -76,26 +82,24 @@ $fila2=mysqli_fetch_array($result2);
 
   <div class="col-sm-6 mb-3">
     <label for="nomdonante" class="form-label"> Nombre de Donante</label>
-    <input type="text" class="form-control" name="nomdonante" id="nomdonante" placeholder="Ingresa tu telefono" value="<?php echo $fila['nomdonante']; ?>">
+    <input type="text" class="form-control" name="nomdonante" id="nomdonante" placeholder="Nombre del donante" value="<?php echo $fila['nomdonante']; ?>">
   </div>
    <div class="col-sm-6 mb-3">
     <label for="fechaing" class="form-label"> Fecha de Ingreso</label>
-    <input type="date" class="form-control" name="fechaing" id="fechaing" placeholder="Ingresa DNI de 8 dígitos numéricos" value="<?php echo $fila['fechaing']; ?>">
+    <input type="date" class="form-control" name="fechaing" id="fechaing" placeholder="Fecha de ingreso" value="<?php echo $fila['fechaing']; ?>">
   </div>
 
   <div class="col-sm-6 mb-3">
     <label for="datodescr" class="form-label"> Datos Descriptivos</label>
 
-
-    
-    <textarea type="text" class="form-control" name="datodescr" id="datodescr" placeholder="Ingresa tu fecha de nacimiento" value="<?php echo $fila['datodescr']; ?>" cols="30" rows="10"></textarea>
+    <textarea class="form-control" name="datodescr" id="datodescr" placeholder="Datos descriptivos" cols="10" rows="3"><?php echo $fila['datodescr']; ?></textarea>
 
     <!-- <input type="text" class="form-control" name="datodescr" id="datodescr" placeholder="Ingresa tu fecha de nacimiento" value=" <?//php echo $fila['datodescr']; ?>" > -->
 
   </div>
   <div class="col-sm-6 mb-3">
     <label for="procedencia" class="form-label"> Procedencia</label>
-    <input type="text" class="form-control" name="procedencia" id="procedencia" placeholder="Ingresa tu Correo Electrónico" value="<?php echo $fila['procedencia']; ?>">
+    <input type="text" class="form-control" name="procedencia" id="procedencia" placeholder="Procedencia" value="<?php echo $fila['procedencia']; ?>">
   </div>
 
 
@@ -128,7 +132,7 @@ $fila2=mysqli_fetch_array($result2);
 
 </div>
   <div class="col-12 text-center">
-  <button type="submit" class="btn btn-primary" name="enviar" id="enviar">Enviar</button>
+  <button type="submit" class="btn btn-success" name="enviar" id="enviar">Confirmar</button>
   
   </div>
   

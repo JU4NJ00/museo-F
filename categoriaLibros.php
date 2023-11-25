@@ -1,6 +1,10 @@
 <?php
 session_start();
-
+if (isset($_SESSION['dniadmin'])){
+} else{
+ if(isset($_SESSION["dniencargado"])){
+   header("location:inicio_encargado.php");
+ }else {header("location:index.php");}}
 
  require_once "conexion.php";
 

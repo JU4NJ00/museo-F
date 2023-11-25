@@ -1,6 +1,10 @@
 <?php
 session_start();
-
+if(isset($_SESSION["dniadmin"])){
+}else{
+ if(isset($_SESSION["dniencargado"])){
+ }else {header("location:index.php");}}
+ 
 // Conexion a la BD
 require_once "conexion.php";
 $sql="SELECT * FROM categorialibro";
@@ -72,37 +76,35 @@ $result=mysqli_query($conex,$sql);
 
   <div class="col-sm-6 mb-3">
     <label for="descripcion" class="form-label">Descripcion</label>
-    <input type="text" class="form-control" name="descripcion" id="descripcion" placeholder="Ingresar descripcion" required>
-  </div>
+    <textarea type="text" class="form-control" name="descripcion" id="descripcion" placeholder="Ingresar descripcion" cols="10" rows="3"></textarea>
+</div>
 
-  <div class="col-sm-6 mb-3">
+<div class="col-sm-6 mb-3">
     <label for="procedencia" class="form-label">Procedencia</label>
-    <input type="text" class="form-control" name="procedencia" id="procedencia" placeholder="Ingresa tu Correo Electrónico" required>
-  </div>
+    <input type="text" class="form-control" name="procedencia" id="procedencia" placeholder="Ingresa Procedencia" required>
+</div>
 
-  <div class="col-sm-6 mb-3">
-  <label for="estado" class="form-label">Estado de Conservacion</label>
+<div class="col-sm-6 mb-3">
+    <label for="estado" class="form-label">Estado de Conservacion</label>
     <select class="form-control" name="estado" id="estado" required>
-      <option value="">Selecciona una opcion</option>
-      <option value="Excelente">Excelente</option>
-      <option value="Muy Bueno">Muy Bueno</option>
-      <option value="Bueno">Bueno</option>
-      <option value="Regular">Regular</option>
-      <option value="Muy Mal Estado">Muy Mal Estado</option>
+        <option value="">Selecciona una opcion</option>
+        <option value="Excelente">Excelente</option>
+        <option value="Muy Bueno">Muy Bueno</option>
+        <option value="Bueno">Bueno</option>
+        <option value="Regular">Regular</option>
+        <option value="Muy Mal Estado">Muy Mal Estado</option>
     </select>
-  </div>   
+</div>   
 
-  <div class="col-sm-6 mb-3">
-  <label for="categoria" class="form-label">Categoria secundaria</label>
+<div class="col-sm-6 mb-3">
+    <label for="categoria" class="form-label">Categoria secundaria</label>
     <select class="form-control" name="categoria" id="categoria" required>
-      <option value="">Selecciona una categoria</option>
-      <?php while($fila=mysqli_fetch_array($result)){ ?>
-      <option value="<?php echo $fila['idcategorias']?>"><?php echo $fila['nombre']?></option>
-      <?php 
-      }
-      ?>
+        <option value="">Selecciona una categoria</option>
+        <?php while($fila=mysqli_fetch_array($result)){ ?>
+        <option value="<?php echo $fila['idcategorias']?>"><?php echo $fila['nombre']?></option>
+        <?php } ?>
     </select>
-  </div>  
+</div>
 
   
 

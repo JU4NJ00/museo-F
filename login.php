@@ -22,11 +22,24 @@ include("primero.php");
   <section class="container ">
    <div class="row justify-content-center">
     <div class="col-6 formulario">
-        
-        <form action="validar.php" method="POST">
+    
+
+      
+                      <form action="validar.php" method="POST">
+                        <?php    
+                  if (isset($_GET["mensaje"])){
+
+                    if($_GET["mensaje"]!="ok"){
+             
+                      echo "<div class='text-center mt-4 mb-5'><div class='alert alert-danger' role='alert'><strong>".$_GET["mensaje"]."</strong></div></div>"; 
+                      
+                    }
+               }
+                  ?>
+                    
         <div class="mb-3">
           <label for="dni" class="form-label">Ingrese su DNI</label>
-          <input type="text" class="form-control" id="dni" name="dni" aria-describedby="emailHelp">
+          <input type="text" class="form-control" id="dni" name="dni" aria-describedby="emailHelp" placeholder="">
           
         </div>
         <div class="mb-3">
@@ -40,14 +53,7 @@ include("primero.php");
    </div>
 
    <?php
-      if (isset($_GET["mensaje"])){
-
-        if($_GET["mensaje"]!="ok"){
- 
-          echo "<div class='text-center mt-4 mb-5'><div class='alert alert-danger' role='alert'><strong>".$_GET["mensaje"]."</strong></div></div>"; 
-          
-        }
-   }
+      
    ?>
 
 

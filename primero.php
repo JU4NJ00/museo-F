@@ -13,6 +13,11 @@
 
     <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
 
+    <!-- Enlance de libreria FPDF -->
+
+    <link type="text/css" rel="stylesheet" href="./fpdf/pdf.css">
+    <link type="text/css" rel="stylesheet" href="./fpdf/pdf.php">
+
     <!-- *** Enlace SASS *** -->
 
     <link rel="stylesheet" href="./sass/principal.css">

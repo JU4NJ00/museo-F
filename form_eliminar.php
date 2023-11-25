@@ -3,6 +3,12 @@
 // Conexion a la Base de Datos Biblioteca 
  
 session_start();
+if(isset($_SESSION["dniadmin"])){
+	
+}else{
+ if(isset($_SESSION["dniencargado"])){
+	header("location:inicio_encargado.php");
+ }else {header("location:index.php");}}
 
 require_once "conexion.php";
 
@@ -70,7 +76,7 @@ include('primero.php');
    <label for="email" class="form-label">* Email</label>
    <input type="email" class="form-control" name="email" id="email" placeholder="Ingresa tu Correo Electrónico" value="<?php echo $fila['email'];?>" disabled>
  </div>
- <div class="col-sm-6 mb-3">
+ <div class="col-sm-6 mb-3" hidden>
    <label for="clave" class="form-label">* Clave</label>
    <input type="text" class="form-control" name="pass" id="pass" placeholder="Ingresa una clave de 8 caracteres como mínimo" value="<?php echo $fila['clave']; ?>" disabled>
  </div>    

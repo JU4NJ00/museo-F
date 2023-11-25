@@ -31,13 +31,13 @@
       <ul class="navbar-nav">
         
       
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <a class="nav-link" href="index.php"><i class="bi bi-house"></i></a>
         </li>
 
         <li class="nav-item pt-1">
           <a class="nav-link" href="https://www.facebook.com/groups/178208595674717/"><i class="bi bi-facebook"></i></a>
-        </li>
+        </li> -->
 
         <li class="nav-item pt-1">
             <!-- Example single danger button -->
@@ -46,11 +46,24 @@
               Listados
               </button>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="mueblesGeneral.php">Muebles</a></li>
-                <li><a class="dropdown-item" href="librosGeneral.php">Libros</a></li>
+                <li><a class="dropdown-item" href="mueblesg.php">Muebles</a></li>
+                <li><a class="dropdown-item" href="librosg.php">Libros</a></li>
               </ul>
             </div>
 
+ <!-- Agregado  -->
+ <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" id="navbarPDF" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <i class="fa-solid fa-file-pdf"></i>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="navbarPDF">
+        <li><a class="dropdown-item" href="pdflibrosg.php?tipo=libros"><i class="fa-solid fa-file-pdf"></i> Descargar Listado Libros</a></li>
+        <li><a class="dropdown-item" href="pdfmueblesg.php?tipo=muebles"><i class="fa-solid fa-file-pdf"></i> Descargar Listado Muebles</a></li>
+        <li><a class="dropdown-item" href="pdfgeneralg.php?tipo=general"><i class="fa-solid fa-file-pdf"></i> Descargar Listado General</a></li>
+    </ul>
+</li>
+
+    <!--  -->
 
           
         </li>
@@ -64,6 +77,7 @@
         </ul>
         <?php
            }else{ 
+            ?> <script src="js/perfil.js"></script> <?php
             if (isset($_SESSION['dniadmin']) ){
             ?>
         <ul class="navbar-nav">
@@ -83,13 +97,28 @@
             <li class="nav-item pt-1">
               <a class="nav-link" href="categoriaLibros.php">Categorias Libros</a>
             </li>
-        </ul>
+           
+           <!-- Agregado  -->
+           <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" id="navbarPDF" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <i class="fa-solid fa-file-pdf"></i>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="navbarPDF">
+        <li><a class="dropdown-item" href="pdflibros.php?tipo=libros"><i class="fa-solid fa-file-pdf"></i> Descargar Listado Libros</a></li>
+        <li><a class="dropdown-item" href="pdfmuebles.php?tipo=muebles"><i class="fa-solid fa-file-pdf"></i> Descargar Listado Muebles</a></li>
+        <li><a class="dropdown-item" href="pdfgeneral.php?tipo=general"><i class="fa-solid fa-file-pdf"></i> Descargar Listado General</a></li>
+    </ul>
+</li>
+
+    <!--  -->
+    </ul>
         <ul class="navbar-nav ms-auto">
 
+
         
-            <div class= "mt-2 text-danger pt-1">
+            <div id="divA" class= "mt-2  border rounded p-1">
            <span>
-              <?php echo $_SESSION["dniadmin"];?>
+              <?php echo $_SESSION["nomadmin"];?>
           </span>
           </div>
       
@@ -112,10 +141,25 @@
               <a class="nav-link" href="inventariolibros.php">Listado de libros</a>
             </li>	
          </ul>
+
+             <!-- Agregado  -->
+             <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" id="navbarPDF" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <i class="fa-solid fa-file-pdf"></i>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="navbarPDF">
+        <li><a class="dropdown-item" href="pdflibros.php?tipo=libros"><i class="fa-solid fa-file-pdf"></i> Descargar Listado Libros</a></li>
+        <li><a class="dropdown-item" href="pdfmuebles.php?tipo=muebles"><i class="fa-solid fa-file-pdf"></i> Descargar Listado Muebles</a></li>
+        <li><a class="dropdown-item" href="pdfgeneral.php?tipo=general"><i class="fa-solid fa-file-pdf"></i> Descargar Listado General</a></li>
+    </ul>
+</li>
+
+    <!--  -->
+
          <ul class="navbar-nav ms-auto">
-            <div class= "mt-2 text-danger pt-1">
+            <div id="divE" class= "mt-2  border rounded p-1">
            <span>
-              <?php echo $_SESSION["dniencargado"];?>
+              <?php echo $_SESSION['nomencargado'];?>
           </span>
           </div>
           <li class="nav-item pt-1">
@@ -128,6 +172,7 @@
       </div>
       </div>
       </nav>       
+  
 </header>
     
     

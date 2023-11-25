@@ -1,6 +1,12 @@
 <?php
 session_start();
 
+if(isset($_SESSION["dniadmin"])){
+
+}else{
+ if(isset($_SESSION["dniencargado"])){
+	header("location:inicio_encargado.php");
+ }else {header("location:index.php");}}
 // Conexion a la BD
 require_once "conexion.php";
 
@@ -47,7 +53,7 @@ $fila=mysqli_fetch_array($result);
   
   <div class="container mt-2 mb-5">
   <div class="text-center mt-5 mb-2"><h2>Editar categoria de libro</h2></div>	
-  
+
   	
   <form class="row g-3" action="editarcategoria2.php" method="post">
   
@@ -60,8 +66,8 @@ $fila=mysqli_fetch_array($result);
   <div class="col-sm-6 mb-3">
   </div>
   <div class="col-12 text-center">
-  <button type="submit" class="btn btn-primary" name="enviar" id="enviar">Actualizar</button>
-  
+  <button type="submit" class="btn btn-primary btn-sm ms-2" name="enviar" id="enviar">Actualizar</button>
+  <a class="btn btn-danger btn-sm ms-2" href="categoriaLibros.php" role="button">Cancelar</a>
   </div>
   
   </form>

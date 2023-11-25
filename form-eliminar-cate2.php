@@ -1,8 +1,14 @@
 <?php
 
 // Conexion a la Base de Datos Biblioteca 
- 
 session_start();
+if(isset($_SESSION["dniadmin"])){
+	
+}else{
+ if(isset($_SESSION["dniencargado"])){
+	header("location:inicio_encargado.php");
+ }else {header("location:index.php");}}
+
 
 require_once "conexion.php";
 
@@ -43,10 +49,10 @@ include('primero.php');
 
  
  <div class="col-12 text-center">
-    <div> <h5>¿Estas segur@ que quieres eliminar esta categoria?</h5>
+    <div> <h5>¿Quieres eliminar esta categoria?</h5>
         <br>
- <button type="submit" class="btn btn-danger btn-sm">Confirmar</button>
- <a class="btn btn-success btn-sm ms-2" href="categoriaLibros.php" role="button">Cancelar</a>
+ <button type="submit" class="btn btn-success btn-sm">Confirmar</button>
+ <a class="btn btn-danger btn-sm ms-2" href="categoriaLibros.php" role="button">Cancelar</a>
  </div>
  
  </form>

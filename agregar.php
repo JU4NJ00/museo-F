@@ -1,6 +1,11 @@
 <?php
 session_start();
-
+if (isset($_SESSION['dniadmin'])){
+ } else{
+  if(isset($_SESSION["dniencargado"])){
+    header("location:inicio_encargado.php");
+  }else {header("location:index.php");}}
+ 
 // Conexion a la BD
 require_once "conexion.php";
 
@@ -22,6 +27,30 @@ require_once "conexion.php";
    
   <section>
    
+  <div>
+
+  <?php
+    
+    // Uso de GET para mostrar Mensaje resultante 
+
+    if (isset($_GET["mensaje"])){
+
+    	 if($_GET["mensaje"]!="ok"){
+
+         echo "<div class='text-center mt-4 mb-5'><div class='alert alert-danger' role='alert'><strong>".$_GET["mensaje"]."</strong></div></div>"; 
+         
+       }else{
+
+        $tiempo_espera = 3;
+         header("refresh: $tiempo_espera; url=http://localhost/proyectomuseo/listado.php");
+         
+         echo "<div class='text-center mt-4 mb-5'><div class='alert alert-success' role='alert'><strong>".$_GET["mensaje"]."</strong></div></div>";  
+       
+       }  
+  } 
+  ?> 
+
+  </div>
   
   <div class="container mt-2 mb-5">
   <div class="text-center mt-5 mb-2"><h2>Datos Personales</h2></div>	
@@ -39,11 +68,11 @@ require_once "conexion.php";
   </div>
   <div class="col-sm-6 mb-3">
     <label for="telefono" class="form-label">Telefono</label>
-    <input type="text" class="form-control" name="telefono" id="telefono" placeholder="Ingresa tu telefono" required>
+    <input type="number" class="form-control" name="telefono" id="telefono" placeholder="Ingresa tu telefono" required>
   </div>
    <div class="col-sm-6 mb-3">
     <label for="dni" class="form-label">DNI</label>
-    <input type="text" class="form-control" name="dni" id="dni" placeholder="Ingresa DNI de 8 dígitos numéricos" required>
+    <input type="number" class="form-control" name="dni" id="dni" placeholder="Ingresa DNI de 8 dígitos numéricos" required>
   </div>
 
   <div class="col-sm-6 mb-3">
@@ -56,7 +85,7 @@ require_once "conexion.php";
   </div>
   <div class="col-sm-6 mb-3">
     <label for="pass" class="form-label">Clave</label>
-    <input type="text" class="form-control" name="pass" id="pass" placeholder="Ingresa una clave de 8 caracteres como mínimo" required>
+    <input type="password" class="form-control" name="pass" id="pass" placeholder="Ingresa una clave de 8 caracteres como mínimo" required>
   </div>    
  
 
@@ -79,26 +108,7 @@ require_once "conexion.php";
   </form>
    
     
-  <?php
-    
-    // Uso de GET para mostrar Mensaje resultante 
-
-    if (isset($_GET["mensaje"])){
-
-    	 if($_GET["mensaje"]!="ok"){
-
-         echo "<div class='text-center mt-4 mb-5'><div class='alert alert-danger' role='alert'><strong>".$_GET["mensaje"]."</strong></div></div>"; 
-         
-       }else{
-
-        $tiempo_espera = 3;
-         header("refresh: $tiempo_espera; url=http://localhost/proyectomuseo/listado.php");
-         
-         echo "<div class='text-center mt-4 mb-5'><div class='alert alert-success' role='alert'><strong>".$_GET["mensaje"]."</strong></div></div>";  
-       
-       }  
-  } 
-  ?> 
+ 
   
 
 

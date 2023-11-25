@@ -1,6 +1,10 @@
 <?php
 session_start();
-
+if (isset($_SESSION['dniadmin'])){
+} else{
+ if(isset($_SESSION["dniencargado"])){
+   header("location:inicio_encargado.php");
+ }else {header("location:index.php");}}
 
  require_once "conexion.php";
 
@@ -24,6 +28,9 @@ session_start();
      
     <div class="container text-center ">
         <div class="text-center mt-5 mb-3"><h3>Categorias</h3></div>
+
+
+        
         <?php if(isset($_GET['mensaje'])) {
                 switch ($_GET['mensaje']) {
                     case 'agregado':
@@ -42,7 +49,7 @@ session_start();
             <div class="row">
                 <div class="col-9"></div>
                     <div class="col-3">
-                    <div class="btn btn-primary btn-sm "> <a class="text-decoration-none text-white" href="form-agregar-cat2.php">Agregar</a></div>
+                    <div class="btn btn-primary btn-sm "> <a class="text-decoration-none text-white" href="form-agregar-cat.php">Agregar</a></div>
                 </div>
             </div>
                 <thead>
@@ -78,7 +85,7 @@ session_start();
             ?>
                     <td>
 
-                    <a class="me-1 btn btn-outline-success btn-sm " href="form-edit-cat2.php?id=<?php echo $fila ['idcategoriaboss'];?>"><i class="fa fa-pencil fa-1x" aria-hidden="true"></i></a>
+                    <a class="me-1 btn btn-outline-success btn-sm " href="form-edit-cat1.php?id=<?php echo $fila ['idcategoriaboss'];?>"><i class="fa fa-pencil fa-1x" aria-hidden="true"></i></a>
               
                      <a class="me-1 btn btn-outline-danger btn-sm" href="form-eliminar-categoriaboss.php?id=<?php echo $fila ['idcategoriaboss'];?>"><i class="fa fa-trash fa-1x" aria-hidden="true"></i></a>
                 </td>

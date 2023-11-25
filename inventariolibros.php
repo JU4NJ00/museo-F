@@ -1,6 +1,9 @@
 
 <?php
 session_start();
+if (isset($_SESSION['dniadmin']) || isset($_SESSION["dniencargado"])){
+} else{
+ header("location:index.php");}
 
 
 
@@ -10,34 +13,36 @@ session_start();
  require_once "fpaginadolibro.php";
 
  //paginadolibro
- $cantmax=contar_registros($conex);
+ if(isset($_POST['clavebuscada'])){
+    $clavebusqueda=$_POST['clavebuscada'];
+ }
+ if(isset($_GET['clav']) && ((($_GET['clav'])!="") || ($_GET['clav'])!=" ")){
+    $clavebusqueda=$_GET['clav'];
 
+}else {$clavebusqueda="";}
+ $cantmax=contar_registros($conex,$clavebusqueda);
 
+ if(isset($_GET['clav']) && ((($_GET['clav'])!="") || ($_GET['clav'])!=" ")){
+    $clavebusqueda=$_GET['clav'];
+
+}
 
 
 
  if (isset($_POST['btnbuscar']) && $_POST['clavebuscada']!=''){
     //si el boton buscar manda algo se ejecuta esto
+
 $clavebusqueda=$_POST['clavebuscada'];
-$cantmax=contar_registrosBUSCADOR($conex,$clavebusqueda);
+ }
+$cantmax=contar_registros($conex,$clavebusqueda);
+
 if (!isset($_GET['pg'])){
     $pag=0;
-    $result=registros_porpaginaBUSCADOR($conex,$pag,$clavebusqueda); 
+    $result=registros_porpagina($conex,$pag,$clavebusqueda); 
 }else{
     $pag=$_GET['pg'];
-    $result=registros_porpaginaBUSCADOR($conex,$pag,$clavebusqueda);
+    $result=registros_porpagina($conex,$pag,$clavebusqueda);
 } 
-
-}else{
-
-    if (!isset($_GET['pg'])){
-        $pag=0;
-        $result=registros_porpagina($conex,$pag); 
-    }else{
-        $pag=$_GET['pg'];
-        $result=registros_porpagina($conex,$pag);
-    } 
-}
  if (mysqli_num_rows($result)>0){
 
          
@@ -48,7 +53,9 @@ if (!isset($_GET['pg'])){
     ?>
       
     <section>
-     
+        <?php
+         if((isset($_GET['clav']) && ($_GET['clav'])!="") || (isset($_POST['btnbuscar']) && $_POST['clavebuscada']!='')){
+            echo '<a href="inventariolibros.php"><i class="fa-sharp fa-solid fa-arrow-left fa-2x m-2"></i></a>';}?>
     <div class="container text-center">
         <div class="text-center mt-5 mb-3"><h3>Listado de Libros</h3></div>
 
@@ -107,11 +114,13 @@ if (!isset($_GET['pg'])){
                     <th scope="col">Descripcion</th>
                     <th scope="col">Procedencia</th>
                     <th scope="col">Estado</th> -->
+                
                     <?php 
             if (isset($_SESSION['dniadmin']) || isset($_SESSION['dniencargado'])){
             ?>
                     <th scope="col">Acciones</th>
             <?php } ?>
+            
                     </tr>
                 </thead>
 
@@ -143,16 +152,22 @@ if (!isset($_GET['pg'])){
             if (isset($_SESSION['dniadmin']) || isset($_SESSION['dniencargado'])){
                 include("verLibros.php");
             ?>
-                    <td>
-                        <a class="me-1 btn btn-outline-success btn-sm " href="form-edit-libros.php?id=<?php echo $fila ['idlibro'];?>"><i class="fa fa-pencil fa-1x" aria-hidden="true"></i></a>
-              
-                        <a class="me-1 btn btn-outline-danger btn-sm" href="form-eliminar-libros.php?id=<?php echo $fila ['idlibro'];?>"><i class="fa fa-trash fa-1x" aria-hidden="true"></i></a>
+                        <td>
+                        <div class="d-flex align-items-center">
+
+                        <a class="me-1 btn btn-outline-success btn-sm" href="form-edit-libros.php?id=<?php echo $fila ['idlibro'];?>"><i class="fa fa-pencil fa-1x" aria-hidden="true"></i></a>
                         
+                        <a class="me-1 btn btn-outline-danger btn-sm" href="form-eliminar-libros.php?id=<?php echo $fila ['idlibro'];?>"><i class="fa fa-trash fa-1x" aria-hidden="true"></i></a>
+                         
                         <a class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#verinfo2<?php echo $fila ['idlibro'];?>"><i class="fa fa-eye fa-1x" aria-hidden="true"></i></a>
+                        </div>
+                        </td>
+
+                       
 
                 
                 
-                    </td>
+                    
 
 </tr>
             <?php } ?>
@@ -182,7 +197,7 @@ if (!isset($_GET['pg'])){
 
 $itemxpag=$cantmax/5;
 for ($i = 0; $i < $itemxpag; $i++) { ?>
-    <li class="page-item"><?php echo "<a class='page-link' href='inventariolibros.php?pg=".$i."'>"; echo $i+1;}?></a></li>
+    <li class="page-item"><?php echo "<a class='page-link' href='inventariolibros.php?clav=$clavebusqueda&pg=".$i."'>"; echo $i+1;}?></a></li>
  </ul> 
   </div>  
 
@@ -195,14 +210,14 @@ for ($i = 0; $i < $itemxpag; $i++) { ?>
 
     <?php
   
-
     include('footer.php');
 
     ?>
+    
+
    
    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
  </body>
  </html>
-
 
 

@@ -1,6 +1,11 @@
 <?php
 session_start();
-
+if(isset($_SESSION["dniadmin"])){
+	header("location:inicio_admin.php");
+}else{
+ if(isset($_SESSION["dniencargado"])){
+	header("location:inicio_encargado.php");
+ }else {header("location:index.php");}}
 // Conexion a la BD
 require_once "conexion.php";
 require_once "funcion_concatenar.php";

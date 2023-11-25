@@ -16,14 +16,14 @@ include("primero.php");
    
    
   <section class="container-fluid seccion__index">
-
-  <div class="placa" >
+  <div class="row">
+  <div class="col-md-12 mx-auto placa" >
 
 
         <h1 class="placa__texto">Sistema de Control de Inventario</h1>
 
   </div>
-   
+   </div>
   <!-- <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-indicators">
     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -73,6 +73,7 @@ include("primero.php");
   ?>
    
    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+
 
 </body>
 

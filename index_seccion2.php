@@ -26,11 +26,15 @@
             </div>
           </div>
           <div class="row">
-    	<div class="col-12 mt-5 ">
+    	
+<!-- poner cuando este por actualizar -->
+    	<!-- <div class="col-12 mt-5 ">
 
       <h3 class="display-5 bg-danger text-light text-center"> - Sitio en Contrucción - </h3>
 		
-		</div> 
+		</div> -->
+      
+	
     </section>
 
 

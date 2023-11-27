@@ -52,7 +52,7 @@
             </div>
 
  <!-- Agregado  -->
- <li class="nav-item dropdown">
+ <li class="nav-item dropdown nav-item pt-1">
     <a class="nav-link dropdown-toggle" href="#" id="navbarPDF" role="button" data-bs-toggle="dropdown" aria-expanded="false">
         <i class="fa-solid fa-file-pdf"></i>
     </a>
@@ -97,9 +97,21 @@
             <li class="nav-item pt-1">
               <a class="nav-link" href="categoriaLibros.php">Categorias Libros</a>
             </li>
-           
            <!-- Agregado  -->
-           <li class="nav-item dropdown">
+            <li class="nav-item dropdown nav-item pt-1">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Elementos Borrados
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="lista_muebles_borrados.php">Muebles Borrados</a></li>
+            <li><a class="dropdown-item" href="lista_libros_borrados.php">Libros Borrados</a></li>
+          </ul>
+        </li>
+
+<!--  -->
+
+           <!-- Agregado  -->
+           <li class="nav-item dropdown nav-item pt-1">
     <a class="nav-link dropdown-toggle" href="#" id="navbarPDF" role="button" data-bs-toggle="dropdown" aria-expanded="false">
         <i class="fa-solid fa-file-pdf"></i>
     </a>
@@ -140,10 +152,10 @@
             <li class="nav-item pt-1">
               <a class="nav-link" href="inventariolibros.php">Listado de libros</a>
             </li>	
-         </ul>
+         
 
              <!-- Agregado  -->
-             <li class="nav-item dropdown">
+             <li class="nav-item dropdown nav-item pt-1">
     <a class="nav-link dropdown-toggle" href="#" id="navbarPDF" role="button" data-bs-toggle="dropdown" aria-expanded="false">
         <i class="fa-solid fa-file-pdf"></i>
     </a>
@@ -153,7 +165,7 @@
         <li><a class="dropdown-item" href="pdfgeneral.php?tipo=general"><i class="fa-solid fa-file-pdf"></i> Descargar Listado General</a></li>
     </ul>
 </li>
-
+</ul>
     <!--  -->
 
          <ul class="navbar-nav ms-auto">

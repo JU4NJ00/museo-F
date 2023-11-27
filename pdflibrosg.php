@@ -25,7 +25,7 @@ $columnTitles = array(
     'lugar' => 'Lugar',
     'paginas' => 'Páginas',
     'estado' => 'Estado de conservación',
-    'imagen' => 'Imagen',
+    'nomImg' => 'Imagen',
 );
 
 $cellWidth = 25;
@@ -42,7 +42,7 @@ if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
         $rowData = array();
         foreach ($columnTitles as $key => $title) {
-            if ($key == 'imagen') {
+            if ($key == 'nomImg') {
                 $imageValue = !empty($row[$key]) ? 'Sí' : 'No';
                 $rowData[] = $imageValue;
             } else {

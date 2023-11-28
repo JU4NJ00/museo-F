@@ -45,6 +45,10 @@ if ($result->num_rows > 0) {
             if ($key == 'nomImg') {
                 $imageValue = !empty($row[$key]) ? 'Sí' : 'No';
                 $rowData[] = $imageValue;
+            } elseif ($key == 'fechaedicion') {
+                // Formatear la fecha
+                $fechaEdicion = date('d/m/Y', strtotime($row[$key]));
+                $rowData[] = $fechaEdicion;
             } else {
                 $rowData[] = $row[$key];
             }

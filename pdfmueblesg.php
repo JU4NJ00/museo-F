@@ -11,6 +11,7 @@ $pdf->AddPage('L', 'A4');
 $pdf->SetFont('Times', '', 7);
 
 $columnTitles = array(
+    
     'designacion' => 'Designación',
     'nomdonante' => 'Nombre del donante',
     'estadoconserv' => 'Estado de conservación',
@@ -38,6 +39,10 @@ if ($result->num_rows > 0) {
             if ($key == 'nomImg') {
                 $imageValue = !empty($row[$key]) ? 'Sí' : 'No';
                 $rowData[] = $imageValue;
+            } elseif ($key == 'fechaing') {
+                // Formatear la fecha
+                $fechaIngreso = date('d/m/Y', strtotime($row[$key]));
+                $rowData[] = $fechaIngreso;
             } else {
                 $rowData[] = $row[$key];
             }

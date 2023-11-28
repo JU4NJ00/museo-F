@@ -106,7 +106,7 @@ include('header.php');
                                         <a class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#verinfo<?php echo $fila['idlibro']; ?>">
                                             <i class="fa fa-eye fa-1x" aria-hidden="true"></i>
                                         </a>
-                                    </td>
+                                        </td>
                                 <?php endif; ?>
                             </tr>
                     <?php

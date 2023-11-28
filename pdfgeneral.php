@@ -50,6 +50,10 @@ if ($result->num_rows > 0) {
             if ($key == 'nomImg') {
                 $imageValue = !empty($row[$key]) ? 'Sí' : 'No';
                 $rowData[] = $imageValue;
+            } elseif ($key == 'fechaedicion') {
+                // Formatear la fecha de edición
+                $fechaEdicion = date('d/m/Y', strtotime($row[$key]));
+                $rowData[] = $fechaEdicion;
             } else {
                 $rowData[] = $row[$key];
             }
@@ -93,6 +97,10 @@ if ($result->num_rows > 0) {
             if ($key == 'nomImg') {
                 $imageValue = !empty($row[$key]) ? 'Sí' : 'No';
                 $rowData[] = $imageValue;
+            } elseif ($key == 'fechaing') {
+                // Formatear la fecha de ingreso
+                $fechaIngreso = date('d/m/Y', strtotime($row[$key]));
+                $rowData[] = $fechaIngreso;
             } else {
                 $rowData[] = $row[$key];
             }

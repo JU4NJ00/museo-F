@@ -51,19 +51,6 @@
               </ul>
             </div>
 
- <!-- Agregado  -->
- <li class="nav-item dropdown nav-item pt-1">
-    <a class="nav-link dropdown-toggle" href="#" id="navbarPDF" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-        <i class="fa-solid fa-file-pdf"></i>
-    </a>
-    <ul class="dropdown-menu" aria-labelledby="navbarPDF">
-        <li><a class="dropdown-item" href="pdflibrosg.php?tipo=libros"><i class="fa-solid fa-file-pdf"></i> Descargar Listado Libros</a></li>
-        <li><a class="dropdown-item" href="pdfmueblesg.php?tipo=muebles"><i class="fa-solid fa-file-pdf"></i> Descargar Listado Muebles</a></li>
-        <li><a class="dropdown-item" href="pdfgeneralg.php?tipo=general"><i class="fa-solid fa-file-pdf"></i> Descargar Listado General</a></li>
-    </ul>
-</li>
-
-    <!--  -->
 
           
         </li>
@@ -97,35 +84,12 @@
             <li class="nav-item pt-1">
               <a class="nav-link" href="categoriaLibros.php">Categorias Libros</a>
             </li>
-           <!-- Agregado  -->
-            <li class="nav-item dropdown nav-item pt-1">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Elementos Borrados
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="lista_muebles_borrados.php">Muebles Borrados</a></li>
-            <li><a class="dropdown-item" href="lista_libros_borrados.php">Libros Borrados</a></li>
-          </ul>
-        </li>
 
-<!--  -->
-
-           <!-- Agregado  -->
-           <li class="nav-item dropdown nav-item pt-1">
-    <a class="nav-link dropdown-toggle" href="#" id="navbarPDF" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-        <i class="fa-solid fa-file-pdf"></i>
-    </a>
-    <ul class="dropdown-menu" aria-labelledby="navbarPDF">
-        <li><a class="dropdown-item" href="pdflibros.php?tipo=libros"><i class="fa-solid fa-file-pdf"></i> Descargar Listado Libros</a></li>
-        <li><a class="dropdown-item" href="pdfmuebles.php?tipo=muebles"><i class="fa-solid fa-file-pdf"></i> Descargar Listado Muebles</a></li>
-        <li><a class="dropdown-item" href="pdfgeneral.php?tipo=general"><i class="fa-solid fa-file-pdf"></i> Descargar Listado General</a></li>
-    </ul>
-</li>
-
-    <!--  -->
-    </ul>
+            <li class="nav-item pt-1 ml-2">
+              <a class="nav-link" href="backuppdf.php"><i class="fa-solid fa-file-pdf pdf1" style="color: #ffffff;"></i></a>
+            </li>
+        </ul>
         <ul class="navbar-nav ms-auto">
-
 
         
             <div id="divA" class= "mt-2  border rounded p-1">
@@ -152,22 +116,7 @@
             <li class="nav-item pt-1">
               <a class="nav-link" href="inventariolibros.php">Listado de libros</a>
             </li>	
-         
-
-             <!-- Agregado  -->
-             <li class="nav-item dropdown nav-item pt-1">
-    <a class="nav-link dropdown-toggle" href="#" id="navbarPDF" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-        <i class="fa-solid fa-file-pdf"></i>
-    </a>
-    <ul class="dropdown-menu" aria-labelledby="navbarPDF">
-        <li><a class="dropdown-item" href="pdflibros.php?tipo=libros"><i class="fa-solid fa-file-pdf"></i> Descargar Listado Libros</a></li>
-        <li><a class="dropdown-item" href="pdfmuebles.php?tipo=muebles"><i class="fa-solid fa-file-pdf"></i> Descargar Listado Muebles</a></li>
-        <li><a class="dropdown-item" href="pdfgeneral.php?tipo=general"><i class="fa-solid fa-file-pdf"></i> Descargar Listado General</a></li>
-    </ul>
-</li>
-</ul>
-    <!--  -->
-
+         </ul>
          <ul class="navbar-nav ms-auto">
             <div id="divE" class= "mt-2  border rounded p-1">
            <span>

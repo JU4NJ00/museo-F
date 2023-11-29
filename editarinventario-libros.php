@@ -22,7 +22,17 @@ $error = "";
  $id=$_SESSION['ids'];
   
 
-        
+ 
+        include('validar_imagen');
+        if($_GET['msjp'] == 'error'){
+            header("Location:inventariolibros.php?mensaje=editError");
+        }else{ 
+        $rutaTemporal = $_FILES['imagen']['tmp_name'];
+        $rutaDestino = './imagenes/' . $nombreImagen;
+
+
+        $imagen = $nombreImagen = $_FILES['imagen']['name'];
+        die($imagen);
 		$autor = $_POST['autor'];
 		$nombre = $_POST['nombre'];
 		$editorial = $_POST['editorial'];
@@ -44,7 +54,7 @@ $error = "";
 
         // Se arma la sentencia SQL de Actualización
             
-        $sql="UPDATE inventariolibros SET autor='$autor',nombre='$nombre',editorial='$editorial',fechaedicion='$fechaedicion',lugar='$lugar',paginas='$paginas',modoadquisicion='$modoadquisicion',nomdonante='$nomdonante',fechaingreso='$fechaingreso',descripcion='$descripcion',procedencia='$procedencia',estado='$estado',categoria_idcategoriaboss=2,categorialibro_idcategorias='$categoria',usuarios_idusuario='$usuario' WHERE idlibro=$id";    
+        $sql="UPDATE inventariolibros SET autor='$autor',nombre='$nombre',editorial='$editorial',fechaedicion='$fechaedicion',lugar='$lugar',paginas='$paginas',modoadquisicion='$modoadquisicion',nomdonante='$nomdonante',fechaingreso='$fechaingreso',descripcion='$descripcion',procedencia='$procedencia',estado='$estado',categoria_idcategoriaboss=2,categorialibro_idcategorias='$categoria',usuarios_idusuario='$usuario', nomImg='$imagen' WHERE idlibro=$id";    
         
         // Ejecuta la sentencia
 
@@ -67,7 +77,7 @@ $error = "";
             header("Location:inventariolibros.php?mensaje=edit");
 
         }
-	
+        }
 	
  
 

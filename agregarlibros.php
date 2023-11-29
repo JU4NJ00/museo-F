@@ -26,13 +26,20 @@ $result=mysqli_query($conex,$sql);
   <div class="container mt-2 mb-5">
   <div class="text-center mt-5 mb-2"><h2>Agregar Libro</h2></div>	
   
-  	
-  <form class="row g-3" action="insertardatoslibros.php" method="post">
+
+
+  <form class="row g-3" action="insertardatoslibros.php" method="post" enctype="multipart/form-data">
   
   <div class="col-sm-6">
     <label for="autor" class="form-label">Autor</label>
     <input type="text" class="form-control" name="autor" id="autor" placeholder="Ingresar el autor" required>
   </div>
+
+  <div class="col-sm-6">
+    <label for="imagen" class="form-label">Imagen</label>
+    <input type="file" class="form-control" name="archivo" id="archivo" >
+  </div>
+
   <div class="col-sm-6 mb-3">
     <label for="nombre" class="form-label">Nombre</label>
     <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Ingresar nombre del libro" required>

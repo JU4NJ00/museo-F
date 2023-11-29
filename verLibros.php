@@ -33,6 +33,12 @@
                         <hr>
 
                         <div class="row">
+                          <div class="col-md-3 ms-auto"><p><strong>Imagen: </strong> </p></div>
+                          <div class="col-md-9 ms-auto"><p> <?php if ($fila['nomImg']) {echo '<img src="./imagenes/'.$fila['nomImg'].'" alt="" srcset="">'; } else { echo 'Imagen no encontrada';} ?> </p></div>
+                        </div>
+                        <hr>
+
+                        <div class="row">
                           <div class="col-md-3 ms-auto"><p><strong>Nombre: </strong> </p></div>
                           <div class="col-md-9 ms-auto"><p> <?php echo $fila['nombre']; ?></p></div>
                         </div>

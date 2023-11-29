@@ -67,6 +67,18 @@ $fila=mysqli_fetch_array($result);
     <label for="nombre" class="form-label"> Nombre</label>
     <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Ingresar nombre del libro" value="<?php echo $fila['nombre']; ?>" >
   </div>
+
+  <div class="col-sm-6 mb-3">
+    <label for="nombre" class="form-label">Imagen</label>
+    <?php if ($fila['nomImg']) { ?>
+        <img src="./imagenes/<?php echo $fila['nomImg']; ?>" alt="Imagen existente" class="img-thumbnail">
+    <?php } else { ?>
+        <b>no encontrada</b>
+    <?php } ?>
+    <input type="file" class="form-control" name="imagen" id="imagen" placeholder="Subir imagen">
+</div>
+
+
   <div class="col-sm-6 mb-3">
     <label for="editorial" class="form-label"> Editorial</label>
     <input type="text" class="form-control" name="editorial" id="editorial" placeholder="Ingresar editorial" value="<?php echo $fila['editorial']; ?>">

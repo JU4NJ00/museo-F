@@ -76,6 +76,10 @@ if (!isset($_GET['pg'])){
                         case 'noencontrado':
                             echo "<div class='text-center mt-4 mb-5'><div class='alert alert-danger' role='alert'><strong>".'Libro no encontrado'."</strong></div></div>";
                        break;
+
+                       case 'editError':
+                        echo "<div class='text-center mt-4 mb-5'><div class='alert alert-danger' role='alert'><strong>".'El libro no se pudo modificar'."</strong></div></div>";
+                   break;
                         }
              }
             ?>

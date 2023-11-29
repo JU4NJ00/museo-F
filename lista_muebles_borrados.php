@@ -52,7 +52,7 @@ include('header.php');
         if (isset($_GET['mensaje'])) {
             switch ($_GET['mensaje']) {
                 case 'eliminado':
-                    echo "<div class='text-center mt-4 mb-5'><div class='alert alert-success' role='alert'><strong>Mueble borrado exitosamente</strong></div></div>";
+                    echo "<div class='text-center mt-4 mb-5'><div class='alert alert-success' role='alert'><strong>Mueble eliminado exitosamente</strong></div></div>";
                     break;
                 case 'restaurado':
                     echo "<div class='text-center mt-4 mb-5'><div class='alert alert-success' role='alert'><strong>Mueble restaurado exitosamente</strong></div></div>";
@@ -100,7 +100,8 @@ include('header.php');
                                 <td><?php echo $fila["modoadquisicion"]; ?></td>
                                 <td><?php echo $fila["nomdonante"]; ?></td>
                                 <td><?php echo $fila["fechaing"]; ?></td>
-                                <?php if (isset($_SESSION['dniadmin']) || isset($_SESSION['dniencargado'])) : ?>
+                                <?php if (isset($_SESSION['dniadmin']) || isset($_SESSION['dniencargado'])) :
+                                    include("verMuebles.php"); ?>
                                     <td>
                                         <a class="btn btn-outline-danger btn-sm" href="form-borrar-mueble.php?id=<?php echo $fila['idmuebles']; ?>">Eliminar o Restaurar</a>
                                         <a class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#verinfo<?php echo $fila['idmuebles']; ?>">
